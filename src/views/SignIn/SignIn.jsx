@@ -19,7 +19,7 @@ const SignIn = () => {
             .then(function(response){
                if(response.status === 200 || response.status === 201) {
                 localStorage.setItem("token",response.data.encodedToken);
-                authDispatch({type:"LOGIN", payload:true});
+                authDispatch({type:"LOGIN", login:true});
                 authDispatch({type:"USER_DATA", userData: response.data.foundUser});
                 authDispatch({type:"CLEAR_INPUTS"});
                 if(location.pathname === '/SignIn') {
@@ -46,7 +46,7 @@ const SignIn = () => {
               .then(function(response){
                  if(response.status === 200 || response.status === 201) {
                   localStorage.setItem("token",response.data.encodedToken);
-                  authDispatch({type:"LOGIN", payload:true})
+                  authDispatch({type:"LOGIN", login:true})
                   authDispatch({type:"USER_DATA", userData: response.data.foundUser});
                   authDispatch({type:"CLEAR_INPUTS"});
                   if(location.pathname === '/SignIn') {

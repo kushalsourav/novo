@@ -1,0 +1,48 @@
+.playlist {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 200px;
+    height: 60px;
+    background-color: aliceblue;
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+}
+.playlist-head {
+    margin-top: 1.5rem;
+    display: flex;
+    width: 100%;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px 15px;
+}
+.btn-transparent{
+    border: none;
+    outline: none;
+    background-color: transparent;
+    padding: 8px;
+}
+.playlist-delete {
+    padding: 15px;
+}
+.playlist-content {
+    padding: 15px;
+}
+.playlist-header {
+font-size: 18px;
+margin-bottom: 5px;
+}
+.playlist-description {
+    font-size: 12px;
+}
+.playlist-link {
+    text-decoration: none;
+    color: inherit;
+}
+.playlist-video{
+    width: 80%;
+    margin: 2rem auto;
+}
+.header {
+    margin-top: 1.5rem;
+    margin-left: 2rem;
+}

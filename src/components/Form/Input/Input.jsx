@@ -7,7 +7,7 @@ const Input = ({name, setInput, placeholder, id , value , error, setPassVisible,
          <input type={passVisible ? "password" : "text"} placeholder={placeholder} name={name} id={id} value={value}
           onChange={(e) => 
             {
-                setInput({type:"INPUT", name: e.target.name , payload:e.target.value})
+                setInput({type:"INPUT", name: e.target.name , input:e.target.value})
             }} 
           className="input"
           autoComplete="on"
