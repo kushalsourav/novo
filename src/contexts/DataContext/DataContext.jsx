@@ -12,6 +12,14 @@ const initalDataState = {
         toastMessage: ""
     },
     liked : [],
+    watchLater: [],
+    playlistVideo: [],
+    playlist: [],
+    playlistForm : {
+        title: '',
+        description: '',
+    },
+    modal : false,
 }
 
 const DataContext = createContext();

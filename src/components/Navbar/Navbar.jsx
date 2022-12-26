@@ -21,7 +21,7 @@ const Navbar = ({data, setData, login, authDispatch}) => {
             </div>
         </div>
         <Link to='/SignIn' className="btn btn-tertiary" onClick={() => 
-            {login && authDispatch({type:"LOGIN", payload:false, token:localStorage.removeItem("token")})}} >{login ? "logout" : "login"}</Link>
+            {login && authDispatch({type:"LOGIN", login:false, token:localStorage.removeItem("token")})}} >{login ? "logout" : "login"}</Link>
     </nav>
         </>
     );

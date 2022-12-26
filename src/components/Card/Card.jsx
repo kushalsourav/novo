@@ -2,7 +2,7 @@ import { Fragment } from "react";
 import { Link } from "react-router-dom";
 import "./Card.css";
 
-const Card = ({videos, filterBySearch, setData, postVideoId, button, postToast, deleteVideo}) => {
+const Card = ({videos, filterBySearch, setData, postVideoId, button, postToast, deleteVideo, postWatchLater,playlistId}) => {
     return(
         <>
         {
@@ -12,7 +12,11 @@ const Card = ({videos, filterBySearch, setData, postVideoId, button, postToast, 
                 }
                 return(
                     <div className="card-vertical-sm" key={video._id}>
-                    
+                        {postWatchLater && 
+                        <span className="badge-quinary" onClick={() => postWatchLater(video,setData, postToast)}>
+                            <i className="fa fa-clock-o" aria-hidden="true"></i>
+                        </span>
+                        }
                         <Link to="/SingleVideoPage" className="card-img" onClick={() => postVideoId(video._id, setData)}>
                             <img src={video.thumbNail} alt={video.title} className="img-responsive card-img" />
                         </Link>
@@ -25,7 +29,7 @@ const Card = ({videos, filterBySearch, setData, postVideoId, button, postToast, 
                            <span><i className="fa fa-thumbs-o-up" aria-hidden="true"></i>{video.views}</span>
                         </small>
                         {button &&  
-                            <button className="btn btn-primary btn-large" onClick={() => deleteVideo(video._id,setData,postToast)}>
+                            <button className="btn btn-primary btn-large" onClick={() => deleteVideo(video._id,setData,postToast, playlistId)}>
                                 {button}
                             </button> 
                         }
