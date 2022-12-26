@@ -23,3 +23,14 @@ export const getVideos = async (setData) =>  {
          console.log(error);
     }
 };
+export const getVideo = async (id, setData) => {
+    try {
+        await axios.get(`/api/video/${id}`).then((response) => {
+            if(response.status === 200 || response.status === 201) {
+                setData({type:"VIDEO", video:response.data.video})
+            };
+        });
+    } catch (error) {
+        console.log(error);
+    }
+};

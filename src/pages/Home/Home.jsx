@@ -3,6 +3,7 @@ import { useData } from "../../contexts/DataContext/DataContext";
 import Card from "../../components/Card/Card";
 import Grid14 from "../../components/Ui/Grid-1-4/Grid14";
 import "./Home.css";
+import { getVideo } from "../../apis/Apis";
 
 
 const Home = () => {
@@ -16,7 +17,7 @@ const Home = () => {
         <Accordion  accordion={setAccordion} setData={setData}  isPrev={isPrev}  isNext={isNext}  />
         <div className="home-bottom">
         <Grid14>
-          <Card videos={data.videos.slice(0,4)}/>
+          <Card videos={data.videos.slice(0,4)} postVideoId={getVideo} setData={setData} />
         </Grid14>
         </div>
         </>

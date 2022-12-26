@@ -3,9 +3,14 @@ import { getCategories,getVideos} from "../../apis/Apis";
 import DataReducer from "../../reducers/DataReducer/DataReducer";
 const initalDataState = {
     categories  : [],
-    videos: [],
+    videos : [],
     accordion : 1,
     search : "",
+    video : [],
+    toast : {
+        toastType: "",
+        toastMessage: ""
+    },
 }
 
 const DataContext = createContext();

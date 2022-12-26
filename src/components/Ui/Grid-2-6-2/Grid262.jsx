@@ -1,4 +1,4 @@
-import './Grid.css';
+import "./Grid262.css";
 
 const Grid262 = ({children}) => {
     return(
