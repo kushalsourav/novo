@@ -24,9 +24,13 @@ const DataReducer = (state, action) => {
               return {...state , playlist: action.playlist};
        case "CLEAR_INPUT" : 
               return {...state, playlistForm : {...state.playlistForm, title:'', description:'' }};
+       case "HISTORY" : 
+              return {...state, history: action.history};
+       case "FILTER" :
+              return {...state , filterCategory : {...state.filterCategory,  filterChecked:action.filterChecked, filterCategoryName: action.filterCategoryName}}
        default:
               return state;
-    } 
+    };
 };
 
 export default DataReducer;

@@ -12,8 +12,8 @@ const Explore = () => {
     return(
         <>
         <Grid28>
-          <Sidebar categories={data.categories} />
-        <VideoTable videos={data.videos} filterBySearch={data.search} video={getVideo} setData={setData} postWatchLater={postWatchLater} postToast={postToast} />
+          <Sidebar categories={data.categories} filterCategory={data.filterCategory} setData={setData} />
+        <VideoTable videos={data.videos} filterBySearch={data.search} video={getVideo} setData={setData} postWatchLater={postWatchLater} postToast={postToast} filterCategory={data.filterCategory} />
         </Grid28>
         </>
     );

@@ -1,6 +1,6 @@
 import { Link } from 'react-router-dom';
 import './Sidebar.css';
-const Sidebar = ({categories}) => {
+const Sidebar = ({categories, filterCategory, setData}) => {
     return(
         <>
         <div className='sidebar'>
@@ -38,6 +38,8 @@ const Sidebar = ({categories}) => {
                            <div key={categoryName} className='sidebar-items'> 
                             <label htmlFor={categoryName}>
                               <input type="checkbox" id={categoryName} 
+                                checked={filterCategory.filterChecked && filterCategory.filterCategoryName === categoryName} 
+                                onChange={(e) =>setData({type:"FILTER" ,filterChecked: e.target.checked, filterCategoryName:categoryName})}
                               /> : {categoryName}
                             </label>
                            </div>

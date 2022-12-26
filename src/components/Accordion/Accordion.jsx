@@ -13,6 +13,7 @@ const Accordion = ({accordion, setData, isNext, isPrev}) => {
                             <p className='accordion-description'>{category.description}</p>
                             <Link to='/Explore'> 
                             <button className='btn btn-tertiary' 
+                             onClick={(e) => setData({type:"FILTER" ,filterChecked: true, filterCategoryName:category.categoryName}) }
                             >Watch Now</button>
                             </Link>
                             </div>

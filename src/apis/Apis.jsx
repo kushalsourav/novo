@@ -28,6 +28,7 @@ export const getVideo = async (id, setData) => {
         await axios.get(`/api/video/${id}`).then((response) => {
             if(response.status === 200 || response.status === 201) {
                 setData({type:"VIDEO", video:response.data.video})
+                postHistory(response.data.video, setData)
             };
         });
     } catch (error) {
@@ -148,7 +149,7 @@ export const getPlaylist = async (setData) => {
     } catch (error) {
         console.log(error)
     }
-}
+};
 export const deletePlaylist  = async (id, setData, postToast) => {
     try {
         await axios.delete(`/api/user/playlists/${id}`,{headers:{authorization: localStorage.getItem("token")}}).then((response) => {
@@ -190,7 +191,7 @@ export const getPlaylistVideo = async (playlistId, setData) => {
         console.log(error)
     }
   
-}
+};
 
 export const deletePlaylistVideo = async ( videoId ,setData, postToast,playlistId) => {
     try {
@@ -203,4 +204,56 @@ export const deletePlaylistVideo = async ( videoId ,setData, postToast,playlistI
     } catch (error) {
         console.log(error)
     }
-}
+};
+
+
+export const postHistory = async (video, setData) => {
+    try {
+        await axios.post(`/api/user/history/`, {video}, {headers: {authorization: localStorage.getItem("token")}}).then((response) => {
+            if(response.status === 201) {
+           getHistory(setData);
+            }
+        })
+    } catch (error) {
+        console.log(error);
+    }
+};
+   
+    
+
+export const getHistory = async (setData) => {
+    try {
+        await axios.get('/api/user/history/',  {headers: {authorization: localStorage.getItem("token")}}).then((response) => {
+            setData({type:"HISTORY", history:response.data.history})
+        })
+    } catch (error) {
+        console.log(error)
+    }
+};
+
+export const deleteHistory  = async (id, setData, postToast) => {
+    try {
+        await axios.delete(`/api/user/history/${id}`, {headers: {authorization: localStorage.getItem("token")}}).then((response) => {
+            if(response.status === 200 || response.status === 201) {
+                getHistory(setData);
+                postToast("success", `video removed from history`);
+            }
+            
+        })
+    } catch (error) {
+        console.log(error);
+    }
+};
+
+export const deleteHistoryAll = async (setData, postToast) => {
+    try {
+        await axios.delete('/api/user/history/all', {headers: {authorization: localStorage.getItem("token")}}).then((response) => {
+            if(response.status === 200 || response.status === 201) {
+                getHistory(setData);
+                postToast("success", `all video removed from history`);
+            }
+        })
+    } catch (error) {
+         console.log(error)
+    }
+};

@@ -2,12 +2,15 @@ import { Fragment } from "react";
 import { Link } from "react-router-dom";
 import "./Card.css";
 
-const Card = ({videos, filterBySearch, setData, postVideoId, button, postToast, deleteVideo, postWatchLater,playlistId}) => {
+const Card = ({videos, filterBySearch, setData, postVideoId, button, postToast, deleteVideo, postWatchLater,playlistId, filterCategory}) => {
     return(
         <>
         {
             videos.map((video) => {
                 if(filterBySearch && video.categoryName.indexOf(filterBySearch) === -1) {
+                    return <Fragment key={video._id}></Fragment>;
+                }
+                if(filterCategory &&  filterCategory.filterChecked && !video.categoryName.includes(filterCategory.filterCategoryName)) {
                     return <Fragment key={video._id}></Fragment>;
                 }
                 return(
