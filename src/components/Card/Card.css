@@ -1,0 +1,29 @@
+.card-vertical-sm {
+ height: 17rem !important;
+ width: 250px !important;
+ text-decoration: none !important;
+ grid-template-rows: 1fr 1fr 35px !important;
+ color: inherit;
+}
+.card-vertical-sm > .card-img{
+    height: 8rem !important;
+    width: 250px !important;
+}
+
+.card-img {
+    background-size: cover;
+}
+.card-icons {
+    display: flex;
+    gap: 1rem;
+    font-size: 14px;
+    position: absolute;
+    right: 0;
+    bottom: 13%;
+}
+
+.grid-1-4 {
+    grid-template-columns: 250px 250px 250px 250px !important;
+    grid-template-rows: auto;
+    gap: 0.625rem;
+}
