@@ -1,0 +1,46 @@
+.sidebar{
+    display: flex;
+    flex-direction: column;
+    height: 90vh;
+}
+.sidebar-items {
+    display: flex;
+    justify-content: space-between;
+    padding: 5px 1rem;
+    text-decoration: none;
+    color: inherit;
+    font-size: 1.15rem;
+    
+}
+.search-icon {
+    position: absolute;
+    top: 35%;
+    right: 0;
+    color: var(--color-danger);
+    padding-right: 10px;
+}
+.sidebar-title {
+    text-align: center;
+    margin-bottom: 1rem;
+    font-size: 1.5rem;
+}
+.sidebar-icon {
+    color: var(--color-danger);
+}
+.sidebar-items:not(:last-child) {
+    margin-bottom: 1rem;
+}
+.sidebar-items:first-child {
+    margin-top: 1rem;
+}
+.sidebar-explore {
+    margin-top: 2rem;
+}
+.grid-2-8 {
+    grid-template-columns: 200px auto!important; 
+}
+
+.home-bottom {
+    margin: 0 auto;
+    width: 85%;
+}

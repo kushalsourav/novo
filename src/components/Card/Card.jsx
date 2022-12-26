@@ -1,10 +1,14 @@
+import { Fragment } from "react";
 import "./Card.css";
 
-const Card = ({videos}) => {
+const Card = ({videos, filterBySearch}) => {
     return(
         <>
         {
             videos.map((video) => {
+                if(filterBySearch && video.categoryName.indexOf(filterBySearch) === -1) {
+                    return <Fragment key={video._id}></Fragment>;
+                }
             
                 return(
                     <div className="card-vertical-sm" key={video._id}>

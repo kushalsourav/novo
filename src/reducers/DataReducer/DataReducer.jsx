@@ -6,6 +6,8 @@ const DataReducer = (state, action) => {
               return {...state, videos:action.videos};
        case "ACCORDION" :
               return {...state, accordion:state.accordion + Number(action.accordion)};
+       case "INPUT" :
+              return {...state, [action.name]: action.input,}
        default:
               return state;
     } 

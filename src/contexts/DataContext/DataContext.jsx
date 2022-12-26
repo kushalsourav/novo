@@ -5,6 +5,7 @@ const initalDataState = {
     categories  : [],
     videos: [],
     accordion : 1,
+    search : "",
 }
 
 const DataContext = createContext();
