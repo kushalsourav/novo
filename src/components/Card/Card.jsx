@@ -1,7 +1,8 @@
 import { Fragment } from "react";
+import { Link } from "react-router-dom";
 import "./Card.css";
 
-const Card = ({videos, filterBySearch}) => {
+const Card = ({videos, filterBySearch, setData, postVideoId}) => {
     return(
         <>
         {
@@ -9,13 +10,12 @@ const Card = ({videos, filterBySearch}) => {
                 if(filterBySearch && video.categoryName.indexOf(filterBySearch) === -1) {
                     return <Fragment key={video._id}></Fragment>;
                 }
-            
                 return(
                     <div className="card-vertical-sm" key={video._id}>
                     
-                        <div className="card-img" >
+                        <Link to="/SingleVideoPage" className="card-img" onClick={() => postVideoId(video._id, setData)}>
                             <img src={video.thumbNail} alt={video.title} className="img-responsive card-img" />
-                        </div>
+                        </Link>
                         <div className="card-head">
                             <h3 className="card-title">{video.categoryName}</h3>
                             <p className="card-subtitle">{video.title}</p>
