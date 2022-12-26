@@ -1,0 +1,4 @@
+.searchbar {
+    width: 250px !important;
+    border-color: var(--color-danger) !important;
+}

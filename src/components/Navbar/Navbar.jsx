@@ -1,9 +1,9 @@
-import { Link} from "react-router-dom";
-
+import { Link, useLocation} from "react-router-dom";
+import SearchBar from "../SearchBar/SearchBar";
 import './Navbar.css';
 
-const Navbar = () => {
-  
+const Navbar = ({data, setData}) => {
+  const location = useLocation();
     return (
         <>
         <nav className="navbar">
@@ -14,6 +14,11 @@ const Navbar = () => {
         </Link> 
         <div className="navbar-links">
             <Link to="/Explore"  className="navbar-link">Explore</Link> 
+        </div>
+        <div className="navbar-items">
+            <div className="navbar-list" style={{display: location.pathname === '/Explore' ? "block" : "none" }}>
+                <SearchBar className="navbar-item" filterText={data.search} setData={setData}/>
+            </div>
         </div>
     </nav>
         </>
