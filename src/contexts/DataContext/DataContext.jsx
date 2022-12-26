@@ -20,6 +20,11 @@ const initalDataState = {
         description: '',
     },
     modal : false,
+    history : [],
+    filterCategory : {
+        filterChecked: '',
+        filterCategoryName:'',
+    },
 }
 
 const DataContext = createContext();
