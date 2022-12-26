@@ -2,7 +2,7 @@ import { Fragment } from "react";
 import { Link } from "react-router-dom";
 import "./Card.css";
 
-const Card = ({videos, filterBySearch, setData, postVideoId}) => {
+const Card = ({videos, filterBySearch, setData, postVideoId, button, postToast, deleteVideo}) => {
     return(
         <>
         {
@@ -24,7 +24,11 @@ const Card = ({videos, filterBySearch, setData, postVideoId}) => {
                            <span><i className="fa fa-eye" aria-hidden="true"></i>{video.likes}</span>
                            <span><i className="fa fa-thumbs-o-up" aria-hidden="true"></i>{video.views}</span>
                         </small>
-
+                        {button &&  
+                            <button className="btn btn-primary btn-large" onClick={() => deleteVideo(video._id,setData,postToast)}>
+                                {button}
+                            </button> 
+                        }
                     </div>
                 )
             })

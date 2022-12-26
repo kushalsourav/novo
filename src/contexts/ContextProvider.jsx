@@ -1,11 +1,14 @@
+import { AuthProvider } from "./AuthContext/AuthContext";
 import { DataProvider } from "./DataContext/DataContext"
 
 
 const ContextProvider = ({children}) => {
   return (
-    <DataProvider>
-        {children}
-    </DataProvider>
+    <AuthProvider>
+        <DataProvider>
+          {children}
+        </DataProvider>
+    </AuthProvider>
   );
 };
 

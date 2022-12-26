@@ -2,7 +2,7 @@ import { Link, useLocation} from "react-router-dom";
 import SearchBar from "../SearchBar/SearchBar";
 import './Navbar.css';
 
-const Navbar = ({data, setData}) => {
+const Navbar = ({data, setData, login, authDispatch}) => {
   const location = useLocation();
     return (
         <>
@@ -20,6 +20,8 @@ const Navbar = ({data, setData}) => {
                 <SearchBar className="navbar-item" filterText={data.search} setData={setData}/>
             </div>
         </div>
+        <Link to='/SignIn' className="btn btn-tertiary" onClick={() => 
+            {login && authDispatch({type:"LOGIN", payload:false, token:localStorage.removeItem("token")})}} >{login ? "logout" : "login"}</Link>
     </nav>
         </>
     );

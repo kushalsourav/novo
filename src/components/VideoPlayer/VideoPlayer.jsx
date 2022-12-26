@@ -2,7 +2,7 @@ import ReactPlayer from "react-player";
 import Buttons from "../Buttons/Buttons";
 import './VideoPlayer.css';
 
-const VideoPlayer = ({video}) => {
+const VideoPlayer = ({video, setData, postToast, postUserLikes}) => {
     return(
         <>
         <div className="videoplayer">
@@ -15,6 +15,10 @@ const VideoPlayer = ({video}) => {
            </div>
            <div>
             <Buttons 
+            video={video}
+            setData={setData}
+            postToast={postToast}
+            postUserLikes={postUserLikes}
             />
            </div>
           <div className="player-description"> 
