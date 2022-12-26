@@ -12,6 +12,8 @@ const DataReducer = (state, action) => {
               return {...state, video:action.video};
        case "TOAST" :
               return {...state, toast: { ...state.toast , toastType: action.toastType, toastMessage: action.toastMessage}};
+       case "LIKED_VIDEO" : 
+              return {...state, liked: action.liked};
        default:
               return state;
     } 

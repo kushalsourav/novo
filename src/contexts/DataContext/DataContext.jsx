@@ -11,6 +11,7 @@ const initalDataState = {
         toastType: "",
         toastMessage: ""
     },
+    liked : [],
 }
 
 const DataContext = createContext();
