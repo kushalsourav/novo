@@ -43,9 +43,9 @@
 # Installation
    * Clone the repository on local machine
    
-           git clone https://github.com/kushalsourav/novo1.git
+           git clone https://github.com/kushalsourav/novo.git
            
-           cd novo1
+           cd novo
    * Install dependencies using package installer
         <p> npm install </p>
      
