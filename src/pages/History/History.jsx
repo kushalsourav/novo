@@ -1,11 +1,12 @@
 import { useData } from "../../contexts/DataContext/DataContext";
-import Card from '../../components/Card/Card';
+import Card from "../../components/Card/Card";
 import useToast from "../../hooks/useToast";
-import Grid28 from '../../components/Ui/Grid-2-8/Grid28';
-import Sidebar from '../../components/Sidebar/Sidebar';
+import Grid28 from "../../components/Ui/Grid-2-8/Grid28";
+import Sidebar from "../../components/Sidebar/Sidebar";
 import Grid14 from "../../components/Ui/Grid-1-4/Grid14";
 import {deleteHistory, deleteHistoryAll, getVideo} from "../../apis/Apis";
-import './History.css'
+import NoData from "../../components/NoData/NoData.jsx";
+import "./History.css"
 
 const History = () => {
 const {data, setData, } = useData();
@@ -19,6 +20,7 @@ const postToast = useToast();
                      <h3>History</h3>
                      <button className="btn btn-tertiary" onClick={() => {deleteHistoryAll(setData, postToast)}}>delete all</button>
                 </div>
+                {data.history.length === 0 && <NoData />}
                 <Grid14>
                      <Card videos={data.history}   deleteVideo={deleteHistory} postVideoId={getVideo} postToast={postToast} setData={setData} button={"remove"}/>
                 </Grid14>

@@ -1,10 +1,11 @@
 import { useData } from "../../contexts/DataContext/DataContext";
 import Card from "../../components/Card/Card"
 import useToast from "../../hooks/useToast";
-import Grid28 from '../../components/Ui/Grid-2-8/Grid28';
-import Grid14 from '../../components/Ui/Grid-1-4/Grid14';
+import Grid28 from "../../components/Ui/Grid-2-8/Grid28";
+import Grid14 from "../../components/Ui/Grid-1-4/Grid14";
 import Sidebar from "../../components/Sidebar/Sidebar";
 import { getVideo, deleteWatchLater } from "../../apis/Apis";
+import NoData from "../../components/NoData/NoData.jsx";
 
 const Watchlater = () => {
   
@@ -17,6 +18,7 @@ const Watchlater = () => {
           <div>
               <div className="header"><h3>Watch Later</h3></div>
               <Grid14>
+                {data.watchLater.length === 0 && <NoData />}
                  <Card 
                  videos={data.watchLater} 
                  setData={setData} 

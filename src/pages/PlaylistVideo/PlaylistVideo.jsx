@@ -1,9 +1,10 @@
 import { useParams } from "react-router-dom";
+import { useEffect } from "react";
 import { useData } from "../../contexts/DataContext/DataContext";
 import Card from '../../components/Card/Card';
 import { getVideo,deletePlaylistVideo, getPlaylistVideo } from "../../apis/Apis";
 import useToast from "../../hooks/useToast";
-import { useEffect } from "react";
+import NoData from "../../components/NoData/NoData.jsx";
 
 const PlaylistVideo = () => {
     const {data,setData} = useData();
@@ -14,7 +15,7 @@ const PlaylistVideo = () => {
   },[playlistId, setData]);
     return (
         <div className="playlist-video">
-           {data.playlistVideo.length <= 0 && <h3>Your playlist is empty</h3>}
+           {data.playlistVideo.length === 0 && <NoData />}
          <Card 
          videos={data.playlistVideo}  
          filterBySearch={data.search} 

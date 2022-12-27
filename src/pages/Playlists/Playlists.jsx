@@ -10,12 +10,12 @@ import useError from "../../hooks/useError";
 import './Playlist.css';
 import Grid28 from '../../components/Ui/Grid-2-8/Grid28';
 import { postPlaylist, deletePlaylist } from '../../apis/Apis';
+import NoData from "../../components/NoData/NoData.jsx";
 
 const Playlists = () => {
 const { data,setData} = useData();
 const postToast = useToast();
 const [error , setError] = useError();
-
 
 
     return(
@@ -34,6 +34,7 @@ const [error , setError] = useError();
             postPlaylist={postPlaylist} postError={setError} postToast={postToast} />
             </Modal>
             <Grid14>
+                {data.playlist.length === 0 && <NoData />}
                 <PlaylistCard  setData={setData}  postToast={postToast}  playlist={data.playlist} handleDelete={deletePlaylist}/>
             </Grid14>
             </div>
