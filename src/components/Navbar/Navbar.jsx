@@ -17,9 +17,12 @@ const Navbar = ({data, setData, login, authDispatch}) => {
             <Link to="/Explore"  className="navbar-link">Explore</Link> 
         </div>
         <div className="navbar-items">
-            <div className="navbar-list" style={{display: location.pathname === '/Explore' ? "block" : "none" }}>
+            <div className="nav-form" style={{display: location.pathname === '/Explore' ? "block" : "none" }}>
                 <SearchBar className="navbar-item" filterText={data.search} setData={setData}/>
             </div>
+        </div>
+        <div className="navbar-items">
+
             { login && 
                 <Link to='/Profile' >
                     <div className="avatar avatar-quaternary">

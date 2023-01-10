@@ -1,4 +1,12 @@
 .video-table {
     height: 90vh;
     overflow-y: scroll;
+    margin-left: -4rem;
+}
+
+@media (max-width: 480px) {
+   .video-table {
+     height: 100%;
+     margin: 2rem auto 0 auto; 
+   }
 }

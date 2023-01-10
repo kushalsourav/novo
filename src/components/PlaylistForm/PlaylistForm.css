@@ -10,3 +10,9 @@
 .playlist-header {
     text-align: center;
 }
+@media (max-width:480px) {
+    .playlist-form {
+        width: 18.75rem;
+        margin: 0 auto;
+    }
+}

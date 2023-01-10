@@ -1,4 +1,29 @@
 .home-bottom {
     margin: 0 auto;
-    width: 85%;
+    width: 95%;
+}
+
+@media (max-width: 1200px) {
+    .home-bottom {
+        width: 85%;
+    }
+    .grid-1-4 {
+        grid-template-columns: auto auto auto;
+    }
+}
+@media (max-width: 1024px) {
+    .home-bottom {
+        width: 85%;
+    }
+ 
+}
+@media (max-width: 768px){
+    .grid-1-4 {
+        grid-template-columns: auto auto;
+    }
+    }
+@media (max-width: 480px){
+.grid-1-4 {
+    grid-template-columns: auto;
+}
 }

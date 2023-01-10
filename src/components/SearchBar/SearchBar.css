@@ -1,4 +1,10 @@
 .searchbar {
-    width: 250px !important;
     border-color: var(--color-danger) !important;
+}
+.search-icon {
+    position: absolute;
+    top: 30%;
+    right: 0;
+    color: var(--color-primary);
+    padding-right: 10px;
 }

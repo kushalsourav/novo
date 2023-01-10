@@ -15,14 +15,14 @@ const Home = () => {
         isPrev = data.accordion <= 1; 
         isNext = data.accordion >= 3;
     return (
-        <>
+        <div>
         <Accordion  accordion={setAccordion} setData={setData}  isPrev={isPrev}  isNext={isNext}  />
         <div className="home-bottom">
         <Grid14>
           <Card videos={data.videos.slice(0,4)} postVideoId={getVideo} setData={setData} postWatchLater={postWatchLater} postToast={postToast} />
         </Grid14>
         </div>
-        </>
+        </div>
     );
 };
 

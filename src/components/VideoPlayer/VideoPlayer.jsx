@@ -11,7 +11,7 @@ const VideoPlayer = ({video, setData, postToast, postUserLikes, postWatchLater, 
              <div className="player-creator">By: {video.creator}</div>
             </div>
            <div className="player">
-           <ReactPlayer  url={video.url} />
+           <ReactPlayer  url={video.url}  width="100%" height="100%" />
            </div>
            <div>
             <Buttons 

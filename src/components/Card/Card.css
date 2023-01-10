@@ -9,7 +9,6 @@
     height: 8rem !important;
     width: 250px !important;
 }
-
 .card-img {
     background-size: cover;
 }
@@ -20,10 +19,4 @@
     position: absolute;
     right: 0;
     bottom: 13%;
-}
-
-.grid-1-4 {
-    grid-template-columns: 250px 250px 250px 250px !important;
-    grid-template-rows: auto;
-    gap: 0.625rem;
 }

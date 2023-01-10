@@ -24,3 +24,9 @@
     padding: 10px;
     font-size: 16px;
 }
+@media (max-width:480px) {
+    .playlist-card {
+        width: 18.75rem;
+        margin: 0 auto;
+    }
+}

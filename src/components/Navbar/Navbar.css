@@ -16,9 +16,33 @@
 .navbar-list {
     position: relative;
 }
+.nav-form {
+    position: relative;
+}
 .nav-img{
     top: 5px;
     position: absolute;
     height: 40px !important;
     width: 40px !important;
+}
+
+@media (max-width:1024px) {
+     .navbar {
+        height: 3.25rem;
+     }
+     .nav-img{
+        top: 10px;
+        height: 2rem !important;
+        width: 2rem !important;
+        margin-left: 10px;
+    }
+}
+
+@media (max-width: 480px) {
+    .nav-form {
+        position: absolute;
+        top: 8%;
+        left: 16%;
+    }
+
 }

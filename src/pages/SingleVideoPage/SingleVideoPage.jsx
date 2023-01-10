@@ -6,14 +6,21 @@ import VideoPlayer from "../../components/VideoPlayer/VideoPlayer";
 import { getVideo, postUserLikes, postWatchLater, postPlaylistVideo, postPlaylist } from "../../apis/Apis";
 import useToast from "../../hooks/useToast";
 import useError from "../../hooks/useError";
+import useToggle from "../../hooks/useToggle";
 
 const SinglevideoPage = () => {
    const {data, setData } = useData();
    const [error, setError] = useError();
    const postToast = useToast();
+   const [toggle, setToggle] = useToggle();
+
+
     return (
        <Grid262>
-       <Sidebar />
+            <button className="sidebar-toggler" onClick={() => setToggle()}>
+                <i className="fa fa-tasks" aria-hidden="true"></i>
+          </button>
+       <Sidebar toggle={toggle}  />
        <VideoPlayer 
         video={data.video} 
         setData={setData}

@@ -1,11 +1,11 @@
 @import url("https://enma1.netlify.app/packages/index.css");
 .container {
     margin: 2rem 3.5rem;
+    position: relative;
 }
 .accordion {
     width: 100%;
     height: 30rem;
-    position: relative;
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center;
@@ -19,7 +19,7 @@
     position: absolute;
     top: 30%;
     color: aliceblue;
-    width: 300px;
+    width: 18.75rem;
     margin: 10px;
     padding: 1rem;
 }
@@ -43,6 +43,63 @@
     top: 80%;
     left: 50%;
     transform: translate(-50%, -50%);
-    
 }
+
+@media (max-width: 1200px) {
+.accordion {
+    width: 100%;
+    height: 24rem;
+}
+.btn-links {
+    top: 85%; 
+}
+}
+@media (max-width: 768px){
+    .grid-1-4 {
+        grid-template-columns: auto auto;
+    }
+    }
+@media(max-width: 480px) {
+    .container {
+        width: 18.75rem;
+        margin: 1rem auto;
+        padding: 5px;
+    }
+    .accordion {
+        width: 18.75rem;
+        height: 22rem;
+    }
+    .accordion-content {
+        width: 12.5rem;
+        margin: 10px;
+        padding: 10px;
+    }
+    .accordion-header {
+        margin: 1rem auto;
+        font-size: 1.5rem; 
+    }
+    .accordion-description {
+        width: 12.5rem;
+    }
+    .btn-links {
+        transform: translate(0%, -50%);
+    }
+    .btn-float {
+       width: 2.5rem;
+       height: 2.5rem;
+    }
+    .icon {
+        font-size: 1.2rem;
+    }
+}
+@media (max-width: 320px){
+    .container {
+        width: 80%;
+    }
+    .accordion {
+        width: 15.625rem;
+    } 
+}
+
+
 
