@@ -2,7 +2,6 @@ import { Link } from "react-router-dom";
 import "./Sidebar.css";
 const Sidebar = ({categories, filterCategory, setData, toggle}) => {
     const className = "sidebar ";
-    console.log(toggle)
     return(
         <>
         <div className={className + ` ${toggle ? "sidebar-active" : "sidebar-inactive"}` }>
