@@ -16,6 +16,7 @@ const Watchlater = () => {
 
       return(
         <Grid28>
+           {data.watchLater.length === 0 && <NoData />}
             <button className="sidebar-toggler" onClick={() => setToggle()}>
                 <i className="fa fa-tasks" aria-hidden="true"></i>
             </button>
@@ -23,7 +24,6 @@ const Watchlater = () => {
             <div>
             <h3 className="text-center">watchlater</h3>
             <Grid14>
-            {data.watchLater.length === 0 && <NoData />}
             <Card 
             videos={data.watchLater} 
             setData={setData} 

@@ -24,6 +24,7 @@ const [toggle, setToggle] = useToggle();
                 <i className="fa fa-tasks" aria-hidden="true"></i>
             </button>
             <Sidebar toggle={toggle} />
+            {data.playlist.length === 0 && <NoData />}
             <div>
             <div className="playlist-head">
                 <div><h3>My Playlists</h3></div>
@@ -37,7 +38,6 @@ const [toggle, setToggle] = useToggle();
             postPlaylist={postPlaylist} postError={setError} postToast={postToast} />
             </Modal>
             <Grid14>
-                {data.playlist.length === 0 && <NoData />}
                 <PlaylistCard  setData={setData}  postToast={postToast}  playlist={data.playlist} handleDelete={deletePlaylist}/>
             </Grid14>
             </div>

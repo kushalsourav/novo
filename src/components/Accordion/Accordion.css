@@ -1,6 +1,7 @@
 @import url("https://enma1.netlify.app/packages/index.css");
 .container {
     margin: 2rem 3.5rem;
+    position: relative;
 }
 .accordion {
     width: 100%;

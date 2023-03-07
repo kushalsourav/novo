@@ -18,10 +18,11 @@ const [toggle, setToggle] = useToggle();
                 <i className="fa fa-tasks" aria-hidden="true"></i>
             </button>
             <Sidebar toggle={toggle} />
+            {data.liked.length === 0 && <NoData />}
             <div>
                 <h3 className="text-center">liked</h3>
                 <Grid14>
-                    {data.liked.length === 0 && <NoData />}
+                 
                     <Card 
                     videos={data.liked} 
                     setData={setData} 
